@@ -25,7 +25,8 @@ func _process(_delta: float):
 func play_anim(anim_name: String, sound_node: AudioStreamPlayer2D = null):
 	is_busy = true
 	sprite.play(anim_name)
-	sound_node.play()
+	if not sound_node == null:
+		sound_node.play()
 	await sprite.animation_finished
 	is_busy = false
 

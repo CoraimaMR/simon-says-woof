@@ -62,30 +62,6 @@ region = Rect2(256, 0, 256, 256)
 atlas = ExtResource("2_jlmqp")
 region = Rect2(512, 0, 256, 256)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_m72dp"]
-atlas = ExtResource("2_jlmqp")
-region = Rect2(768, 0, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7gya2"]
-atlas = ExtResource("2_jlmqp")
-region = Rect2(1024, 0, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uroeb"]
-atlas = ExtResource("2_jlmqp")
-region = Rect2(1280, 0, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hn7df"]
-atlas = ExtResource("2_jlmqp")
-region = Rect2(1536, 0, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fe33g"]
-atlas = ExtResource("2_jlmqp")
-region = Rect2(1792, 0, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nnrlo"]
-atlas = ExtResource("2_jlmqp")
-region = Rect2(2048, 0, 256, 256)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_v3i3p"]
 atlas = ExtResource("4_jlmqp")
 region = Rect2(0, 0, 256, 256)
@@ -361,7 +337,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ydcs6")
 }],
-"loop": true,
+"loop": false,
 "name": &"dead",
 "speed": 5.0
 }, {
@@ -548,7 +524,7 @@ script = ExtResource("1_jlmqp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1796124739]
 sprite_frames = SubResource("SpriteFrames_ux4we")
-animation = &"bark"
+animation = &"dead"
 autoplay = "walk"
 
 [node name="woof" type="AudioStreamPlayer2D" parent="." unique_id=834723053]
