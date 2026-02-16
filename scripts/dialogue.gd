@@ -58,7 +58,8 @@ func new_order():
 	turn_active = true
 
 func next_order():
-	if not is_inside_tree(): return
+	if not is_inside_tree(): 
+		return
 	$".".visible = false
 	await get_tree().create_timer(3.0).timeout 
 	new_order()
