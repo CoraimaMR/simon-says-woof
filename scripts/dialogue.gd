@@ -4,7 +4,6 @@ extends Control #dialogue
 @onready var dog_script = $"../dog"
 @onready var ui_script = $"../CanvasLayerUI"
 @onready var correct_sound = $correct
-@onready var incorrect_sound = $incorrect
 
 var current_order := ""
 var waiting = false
@@ -41,7 +40,6 @@ func _process(delta):
 			next_order()
 		elif Input.is_anything_pressed():
 			print("Wrong key!")
-			incorrect_sound.play()
 			turn_active = false
 			game_punishment()
 

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://lh2il80i8ju3" path="res://scripts/menu.gd" id="1_jx1is"]
 [ext_resource type="FontFile" uid="uid://tlcvd5bq06p5" path="res://fonts/song_of_valentine_sans/Song of Valentine Sans.otf" id="2_7shsi"]
 [ext_resource type="Texture2D" uid="uid://cp0iwih3djj36" path="res://assets/background/menu.webp" id="2_dmaew"]
-[ext_resource type="AudioStream" uid="uid://cywr62qcixrfa" path="res://sounds/you win.mp3" id="4_dmaew"]
+[ext_resource type="AudioStream" uid="uid://bqk1uwfeifkek" path="res://sounds/you win.mp3" id="4_dmaew"]
 
 [node name="Control" type="Control" unique_id=154517804]
 layout_mode = 3
