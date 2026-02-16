@@ -6,7 +6,6 @@ extends Control #dialogue
 @onready var correct_sound = $correct
 
 var current_order := ""
-var waiting = false
 var time_limit = 2.0
 var current_time = 0.0
 var turn_active = false
@@ -62,8 +61,6 @@ func new_order():
 func next_order():
 	if not is_inside_tree(): return
 	$".".visible = false
-	waiting = true
 	await get_tree().create_timer(3.0).timeout 
 	new_order()
-	waiting = false
 	$".".visible = true
