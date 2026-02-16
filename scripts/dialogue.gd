@@ -27,7 +27,6 @@ func _process(delta):
 	current_time -= delta
 	if current_time <= 0:
 		print("Too slow!")
-		turn_active = false
 		game_punishment()
 		return
 	if current_order != "":
@@ -39,10 +38,10 @@ func _process(delta):
 			next_order()
 		elif Input.is_anything_pressed():
 			print("Wrong key!")
-			turn_active = false
 			game_punishment()
 
 func game_punishment():
+	turn_active = false
 	if dog_script:
 		dog_script.play_confusion()
 	var player_died = false
