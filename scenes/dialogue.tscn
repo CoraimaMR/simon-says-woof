@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://brll8t6ccaqrq" path="res://scripts/dialogue.gd" id="1_3n4vj"]
 [ext_resource type="Texture2D" uid="uid://c0u22kj7o54mn" path="res://assets/dialogue/pngtree-blue-stripe-bubble-download-image_1250698-removebg-preview.png" id="1_jwyou"]
 [ext_resource type="AudioStream" uid="uid://i6dwbwchqyf8" path="res://sounds/correct.mp3" id="3_fyky8"]
-[ext_resource type="AudioStream" uid="uid://ds4optt5mvifc" path="res://sounds/incorrect.mp3" id="4_led2e"]
 
 [node name="Control" type="Control" unique_id=1470227166]
 layout_mode = 3
@@ -38,8 +37,4 @@ autowrap_mode = 2
 
 [node name="correct" type="AudioStreamPlayer" parent="." unique_id=912411441]
 stream = ExtResource("3_fyky8")
-volume_db = -20.0
-
-[node name="incorrect" type="AudioStreamPlayer" parent="." unique_id=908956946]
-stream = ExtResource("4_led2e")
 volume_db = -20.0

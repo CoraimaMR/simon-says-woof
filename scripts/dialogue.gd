@@ -4,10 +4,8 @@ extends Control #dialogue
 @onready var dog_script = $"../dog"
 @onready var ui_script = $"../CanvasLayerUI"
 @onready var correct_sound = $correct
-@onready var incorrect_sound = $incorrect
 
 var current_order := ""
-var waiting = false
 var time_limit = 2.0
 var current_time = 0.0
 var turn_active = false
@@ -29,7 +27,6 @@ func _process(delta):
 	current_time -= delta
 	if current_time <= 0:
 		print("Too slow!")
-		turn_active = false
 		game_punishment()
 		return
 	if current_order != "":
@@ -41,11 +38,10 @@ func _process(delta):
 			next_order()
 		elif Input.is_anything_pressed():
 			print("Wrong key!")
-			incorrect_sound.play()
-			turn_active = false
 			game_punishment()
 
 func game_punishment():
+	turn_active = false
 	if dog_script:
 		dog_script.play_confusion()
 	var player_died = false
@@ -62,10 +58,9 @@ func new_order():
 	turn_active = true
 
 func next_order():
-	if not is_inside_tree(): return
+	if not is_inside_tree(): 
+		return
 	$".".visible = false
-	waiting = true
 	await get_tree().create_timer(3.0).timeout 
 	new_order()
-	waiting = false
 	$".".visible = true

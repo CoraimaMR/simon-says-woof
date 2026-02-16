@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://cmmfjbffvt5sw" path="res://sounds/dog/ladrido.mp3" id="11_v3i3p"]
 [ext_resource type="AudioStream" uid="uid://mcxobr80q08u" path="res://sounds/dog/pop.mp3" id="12_x8of7"]
 [ext_resource type="AudioStream" uid="uid://t1to17c5ehwo" path="res://sounds/dog/boing.mp3" id="13_4ke0b"]
+[ext_resource type="AudioStream" uid="uid://ds4optt5mvifc" path="res://sounds/incorrect.mp3" id="14_btgii"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ud64p"]
 atlas = ExtResource("1_ei5el")
@@ -524,7 +525,7 @@ script = ExtResource("1_jlmqp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1796124739]
 sprite_frames = SubResource("SpriteFrames_ux4we")
-animation = &"dead"
+animation = &"poop"
 autoplay = "static"
 
 [node name="woof" type="AudioStreamPlayer2D" parent="." unique_id=834723053]
@@ -535,3 +536,7 @@ stream = ExtResource("12_x8of7")
 
 [node name="boing" type="AudioStreamPlayer2D" parent="." unique_id=1316702672]
 stream = ExtResource("13_4ke0b")
+
+[node name="incorrect" type="AudioStreamPlayer" parent="." unique_id=37187554]
+stream = ExtResource("14_btgii")
+volume_db = -20.0

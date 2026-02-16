@@ -4,8 +4,9 @@ extends CharacterBody2D # DOG
 @onready var woof_sound = $woof
 @onready var pop_sound = $pop
 @onready var boing_sound = $boing
+@onready var incorrect_sound = $incorrect
 
-var is_busy: bool = false
+var is_busy = false
 
 func _process(_delta: float):
 	if is_busy:
@@ -22,7 +23,7 @@ func _process(_delta: float):
 	elif not sprite.is_playing():
 		sprite.play("static")
 
-func play_anim(anim_name: String, sound_node: AudioStreamPlayer2D = null):
+func play_anim(anim_name, sound_node = null):
 	is_busy = true
 	sprite.play(anim_name)
 	if not sound_node == null:
@@ -31,5 +32,9 @@ func play_anim(anim_name: String, sound_node: AudioStreamPlayer2D = null):
 	is_busy = false
 
 func play_confusion():
+	for child in get_children():
+		if child is AudioStreamPlayer2D:
+			child.stop()
+	incorrect_sound.play()
 	sprite.play("dead")
 	await get_tree().create_timer(1.0).timeout
