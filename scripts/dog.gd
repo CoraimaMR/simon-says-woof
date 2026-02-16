@@ -33,7 +33,7 @@ func play_anim(anim_name, sound_node = null):
 
 func play_confusion():
 	for child in get_children():
-		if child is AudioStreamPlayer or child is AudioStreamPlayer2D:
+		if child is AudioStreamPlayer2D:
 			child.stop()
 	incorrect_sound.play()
 	sprite.play("dead")
